@@ -1,2 +1,5 @@
+
 x = input('What is your name?')
-print ('Hello, '+x+'!')
+y = input('How many greetings?')
+print (y+' x Hello, '+x+'!')
+
