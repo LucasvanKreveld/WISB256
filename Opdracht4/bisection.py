@@ -29,6 +29,6 @@ def findRoot(f,a,b,epsilon):
                 b = (a+b)/2
             else:
                 a = (a+b)/2
-    print('x =', (a+b)/2)
+    print((a+b)/2)
         
 
