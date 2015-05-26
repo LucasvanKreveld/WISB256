@@ -55,3 +55,21 @@ class Vector(object):
             square+=self.element[i]**2
         value=math.sqrt(square)
         return(value)
+    
+    def Proj(self,u):
+        x = self.inner(u)/u.inner(u)
+        y = u.scalar(x)
+        return(y)
+
+def GrammSchmidt(V):
+    n=len(V[0].element)
+    m=len(V)
+    U=m*[0]
+    for k in range(0,m):
+        y=Vector(n)
+        for l in range(0,k):
+            y.lincomb(V[k].Proj(U[l]),1,1)
+        U[k]=V[k].lincomb(y,1,-1)
+    for j in range(0,m):
+        U[j]=U[j].scalar(1/U[j].norm())
+    return(U)
