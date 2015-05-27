@@ -18,11 +18,12 @@ class Vector(object):
         n=len(self.element)
         t=[]
         for i in range(0,n):
-            a=str("{0:.6f}".format(self.element[i]))
+            a=str(self.element[i])
             t.append(a)
         c=''
-        for i in range(0,n):
+        for i in range(0,n-1):
             c=c+t[i]+'\n'
+        c=c+t[n-1]
         return(c)
             
     def lincomb(self,other,alpha,beta):
