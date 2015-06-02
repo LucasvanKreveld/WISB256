@@ -30,7 +30,7 @@ class Vector(object):
         n=len(self.element)
         new=[]
         for i in range(0,n):
-            w=self.element[i]=alpha*self.element[i]+beta*other.element[i]
+            w=alpha*self.element[i]+beta*other.element[i]
             new.append(w)
         return(Vector(n,new))
         
@@ -38,7 +38,7 @@ class Vector(object):
         n=len(self.element)
         new=[]
         for i in range(0,n):
-            w=self.element[i]=alpha*self.element[i]
+            w=alpha*self.element[i]
             new.append(w)
         return(Vector(n,new))
         
