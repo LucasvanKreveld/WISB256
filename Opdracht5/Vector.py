@@ -69,8 +69,11 @@ def GrammSchmidt(V):
     for k in range(0,m):
         y=Vector(n)
         for l in range(0,k):
-            y.lincomb(V[k].Proj(U[l]),1,1)
+            a=V[k].Proj(U[l])
+            y=y.lincomb(a,1,1)
         U[k]=V[k].lincomb(y,1,-1)
+    W=m*[0]
     for j in range(0,m):
-        U[j]=U[j].scalar(1/U[j].norm())
-    return(U)
+        b=U[j].norm()
+        W[j]=U[j].scalar(1/b)
+    return(W)
